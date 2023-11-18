@@ -1,0 +1,18 @@
+include $(CONTIKI_CPU)/Makefile.gecko_sdk  
+
+DEVICE_FAMILY := MGM24
+###true
+RAIL_CPU := efr32xg24
+###true
+RAIL_FAMILY := efr32xg2x
+###true
+
+CFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -mcmse
+
+LDFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -mcmse
+
+include $(CONTIKI_CPU)/Makefile.gecko
+
+include $(CONTIKI)/$(CONTIKI_NG_CM33_DIR)/Makefile.cm33
+
+include $(CONTIKI_CPU)/Makefile.commander

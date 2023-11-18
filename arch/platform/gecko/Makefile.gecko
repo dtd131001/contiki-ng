@@ -3,8 +3,8 @@ ifndef CONTIKI
 endif
 
 ### Board and BSP selection
-BOARD ?= brd4162a
-BOARDS = brd4162a brd4166a
+BOARD ?= mgm24
+BOARDS = brd4162a brd4166a mgm24
 
 ### Unless the example dictates otherwise, build with code size optimisations switched off
 SMALL ?= 0

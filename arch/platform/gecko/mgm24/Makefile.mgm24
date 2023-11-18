@@ -1,0 +1,12 @@
+### Will allow the inclusion of the correct OPN makefile
+DEVICE_OPN = mgm240pb32vnn
+###true
+
+BOARD_SOURCEFILES += board-leds.c
+BOARD_SOURCEFILES += board-buttons.c
+BOARD_SOURCEFILES += sl_board_default_init.c
+
+CFLAGS += -DBOARD_CONF_PATH=\"mgm24-conf.h\"
+
+CONTIKI_TARGET_DIRS += mgm24
+CONTIKI_TARGET_DIRS += mgm24/config

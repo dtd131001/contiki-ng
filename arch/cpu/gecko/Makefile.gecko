@@ -58,6 +58,7 @@ GSDK_C_SRCS += $(GSDK_ROOT)/platform/emlib/src/em_system.c
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/emlib/src/em_timer.c
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/emlib/src/em_usart.c
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/emlib/src/em_wdog.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/emlib/src/em_eusart.c
 GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/emlib/src
 GSDK_INC_PATHS += $(GSDK_ROOT)/platform/emlib/inc
 
@@ -82,7 +83,11 @@ GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/emdrv/uartdrv/src
 GSDK_INC_PATHS += $(GSDK_ROOT)/platform/emdrv/uartdrv/inc
 
 ## peripheral
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/peripheral/src/peripheral_keyscan.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/peripheral/src/peripheral_sysrtc.c
+
 GSDK_INC_PATHS += $(GSDK_ROOT)/platform/peripheral/inc
+GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/peripheral/src
 
 ## common
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/common/src/sl_slist.c
@@ -114,19 +119,27 @@ GSDK_INC_PATHS += $(GSDK_ROOT)/platform/service/iostream/inc
 
 ### device_init
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_nvic.c
-GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_dcdc_s1.c
-GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_hfxo_s1.c
-GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_lfxo_s1.c
-GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_emu_s1.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_dcdc_s2.c
+###dong duoi sua
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_hfxo_mgm24.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_lfxo_s2.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/device_init/src/sl_device_init_emu_s2.c
+
 GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/service/device_init/src
 GSDK_INC_PATHS += $(GSDK_ROOT)/platform/service/device_init/inc
 
 ### power_manager
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/power_manager/src/sl_power_manager.c
-GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/power_manager/src/sl_power_manager_hal_s0_s1.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/power_manager/src/sl_power_manager_hal_s2.c
 GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/power_manager/src/sl_power_manager_debug.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/hfxo_manager/src/sl_hfxo_manager_hal_s2.c
+GSDK_C_SRCS += $(GSDK_ROOT)/platform/service/hfxo_manager/src/sl_hfxo_manager.c
+
 GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/service/power_manager/src
 GSDK_INC_PATHS += $(GSDK_ROOT)/platform/service/power_manager/inc
+GSDK_INC_PATHS += $(GSDK_ROOT)/platform/service/hfxo_manager/config
+GSDK_INC_PATHS += $(GSDK_ROOT)/platform/service/hfxo_manager/inc
+GSDK_SRC_PATHS += $(GSDK_ROOT)/platform/service/hfxo_manager/src
 
 ## radio
 
